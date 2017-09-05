@@ -10,18 +10,24 @@ import traitsList from '../json/traits-list';
 export default class App extends React.Component {
     constructor() {
         super();
-        this.state = {traits:traitsList};
+        this.state = {
+            traits: traitsList,
+            stacks: {
+                no: [],
+                yes: []
+            }
+        };
     }
 
     render() {
         return (
             <div>
-                <h1>Hello Worldz</h1>
-                <ul>
-                    {this.state.traits.map(function(trait, i){
+                <h1>Branding Game</h1>
+                <div>
+                    {this.state.traits.map((trait, i) => {
                         return <TraitItem key={i} trait={trait} />
                     })}
-                </ul>
+                </div>
             </div>
         );
     }

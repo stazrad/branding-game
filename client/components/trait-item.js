@@ -5,12 +5,19 @@ export default class TraitItem extends React.Component {
         super();
     }
 
+    addTrait(e) {
+        console.log(e.target.innerText);
+    }
+
     render() {
         return (
             <div className="trait-item">
-                <li>white: {this.props.trait.whiteSideTrait}</li>
-                <li>black: {this.props.trait.blackSideTrait}</li>
-                {console.log(this.props.trait.whiteSideTrait, this.props.trait.blackSideTrait)}
+                <div className="trait" onClick={this.addTrait}>
+                    {this.props.trait.whiteSideTrait}
+                </div>
+                <div className="trait" onClick={this.addTrait}>
+                    {this.props.trait.blackSideTrait}
+                </div>
             </div>
         );
     }
