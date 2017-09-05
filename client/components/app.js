@@ -18,7 +18,9 @@ export default class App extends React.Component {
             <div>
                 <h1>Hello Worldz</h1>
                 <ul>
-                    <TraitItem />
+                    {this.state.traits.map(function(trait, i){
+                        return <TraitItem key={i} trait={trait} />
+                    })}
                 </ul>
             </div>
         );

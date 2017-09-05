@@ -6,6 +6,12 @@ export default class TraitItem extends React.Component {
     }
 
     render() {
-        return <li>white: </li>;
+        return (
+            <div className="trait-item">
+                <li>white: {this.props.trait.whiteSideTrait}</li>
+                <li>black: {this.props.trait.blackSideTrait}</li>
+                {console.log(this.props.trait.whiteSideTrait, this.props.trait.blackSideTrait)}
+            </div>
+        );
     }
 };
