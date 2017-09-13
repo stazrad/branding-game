@@ -11,6 +11,7 @@ h1 {
     display: inline-block;
     margin: 10px;
     padding: 10px;
+    padding-top: 20px;
     background: black;
     width: 150px;
     height: 40px;
@@ -19,4 +20,19 @@ h1 {
 .trait {
     color: white;
     font-family: sans-serif;
+    display: inline-block;
+}
+
+.faces-overlay {
+    display: block;
+}
+
+.faces {
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    margin: 4px 5px;
+}
+.faces:hover {
+    color: #0bbbf0;
 }

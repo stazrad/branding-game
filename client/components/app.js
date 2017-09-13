@@ -13,40 +13,39 @@ export default class App extends React.Component {
         this.state = {
             traits: traitsList,
             stacks: {
-                no: [],
-                yes: [{trait:'tits'}]
+                happy: [],
+                neutral: [],
+                sad: []
             }
         };
     }
 
     onSelect(selection) {
-        let noStack = this.state.stacks.no;
-        let yesStack = this.state.stacks.yes;
+        let happyStack = this.state.stacks.happy;
+        let neutralStack = this.state.stacks.neutral;
+        let sadStack = this.state.stacks.sad;
 
-        if(selection.yes) {
-            yesStack.push(selection);
+        if(selection.face === "happy") {
+            happyStack.push(selection.trait);
+        } else if(selection.face === "sad") {
+            sadStack.push(selection.trait);
         } else {
-            noStack.push(selection);
+            neutralStack.push(selection.trait);
         }
 
         let updatedStacks = {
-            no: noStack,
-            yes: yesStack
+            happy: happyStack,
+            sad: sadStack,
+            neutral: neutralStack
         }
 
-        this.setState({
-            stacks: updatedStacks
-        })
-
-        console.log(updatedStacks);
+        this.setState({updatedStacks})
     }
 
     render() {
         return (
             <div>
                 <h1>Branding Game</h1>
-                <h3>Latest:    {this.state.stacks.yes[this.state.stacks.yes.length-1].trait}
-                </h3>
                 <TraitItems
                     traits={this.state.traits}
                     onSelect={this.onSelect.bind(this)} />

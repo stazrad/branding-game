@@ -6,24 +6,36 @@ export default class TraitItem extends React.Component {
     }
 
     select(e) {
+        let trait = this.props.trait;
+        let face = e.target.classList[1];
+
         let selection = {
-            yes: true,
-            trait: e.target.innerText
+            face: face,
+            trait: trait
         }
         this.props.onSelect(selection);
     }
 
     render() {
-        let white = this.props.trait.whiteSideTrait;
-        let black = this.props.trait.blackSideTrait;
         return (
             <div className="trait-item">
-                <div className="trait" onClick={this.select.bind(this)}>
-                    {white}
+
+                <div className="trait">
+                    {this.props.trait}
                 </div>
-                <div className="trait" onClick={this.select.bind(this)}>
-                    {black}
+
+                <div className="faces-overlay">
+                    <div
+                        className="faces happy"
+                        onClick={this.select.bind(this)}>:)</div>
+                    <div
+                        className="faces neutral"
+                        onClick={this.select.bind(this)}>:|</div>
+                    <div
+                        className="faces sad"
+                        onClick={this.select.bind(this)}>:(</div>
                 </div>
+
             </div>
         );
     }
