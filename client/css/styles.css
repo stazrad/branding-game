@@ -7,32 +7,64 @@ h1 {
     text-align: center;
 }
 
+.container {
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
+
 .trait-item {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    padding-top: 20px;
-    background: black;
-    width: 150px;
-    height: 40px;
+    display: inline-grid;
+    margin: 0px;
+    background: #f0f0f0;
+    line-height: 300px;
+    text-align: center;
+    width: 33%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.trait-item:nth-child(odd) {
+    background: white;
 }
 
 .trait {
-    color: white;
+    color: black;
     font-family: sans-serif;
     display: inline-block;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
 }
 
 .faces-overlay {
     display: block;
+    padding-top: 26px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: black;
+    left: 0;
+    top: 800px;
+}
+.trait-item:hover > .faces-overlay {
+    top: 0;
 }
 
 .faces {
-    color: white;
     display: inline-block;
     cursor: pointer;
     margin: 4px 5px;
+    width: 60px;
+    height: auto;
 }
-.faces:hover {
-    color: #0bbbf0;
+
+.happy-color {
+    background: #f7a27c;
+}
+.neutral-color {
+    background: #fabb73;
+}
+.sad-color {
+    background: #3b80c2;
 }

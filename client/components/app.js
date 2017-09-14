@@ -26,11 +26,11 @@ export default class App extends React.Component {
         let sadStack = this.state.stacks.sad;
 
         if(selection.face === "happy") {
-            happyStack.push(selection.trait);
+            happyStack.push(selection);
         } else if(selection.face === "sad") {
-            sadStack.push(selection.trait);
+            sadStack.push(selection);
         } else {
-            neutralStack.push(selection.trait);
+            neutralStack.push(selection);
         }
 
         let updatedStacks = {
@@ -40,15 +40,18 @@ export default class App extends React.Component {
         }
 
         this.setState({updatedStacks})
+
+        console.log(updatedStacks);
     }
 
     render() {
         return (
             <div>
-                <h1>Branding Game</h1>
-                <TraitItems
-                    traits={this.state.traits}
-                    onSelect={this.onSelect.bind(this)} />
+                <div className="container">
+                    <TraitItems
+                        traits={this.state.traits}
+                        onSelect={this.onSelect.bind(this)} />
+                </div>
             </div>
         );
     }
