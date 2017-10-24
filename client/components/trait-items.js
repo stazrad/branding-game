@@ -3,14 +3,14 @@ import React from 'react';
 import TraitItem from './trait-item';
 
 export default class TraitItems extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
 
-        let traitItems = this.props.traits.map((trait, i) => {
+        let traitItems = props.traits.map((trait, i) => {
             let traitItem = <TraitItem
                                 key={i}
                                 trait={trait}
-                                onSelect={this.props.onSelect} />;
+                                onSelect={props.onSelect} />;
             return traitItem;
         })
 
