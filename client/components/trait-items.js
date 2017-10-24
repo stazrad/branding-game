@@ -5,8 +5,17 @@ import TraitItem from './trait-item';
 export default class TraitItems extends React.Component {
     constructor() {
         super();
+
+        let traitItems = this.props.traits.map((trait, i) => {
+            let traitItem = <TraitItem
+                                key={i}
+                                trait={trait}
+                                onSelect={this.props.onSelect} />;
+            return traitItem;
+        })
+
         this.state = {
-            traitItems: []
+            traitItems: traitItems
         }
     }
 
@@ -15,15 +24,8 @@ export default class TraitItems extends React.Component {
         return (
             <div>
                 {
-                    this.props.traits.map((trait, i) => {
-                        let traitItem = <TraitItem
-                                            key={i}
-                                            trait={trait}
-                                            onSelect={this.props.onSelect} />;
-                        if(traitItems.length < 6) {
-                            traitItems.push(traitItem);
-                            return traitItem;
-                        }
+                    this.state.traitItems.map((traitItem) => {
+                        return traitItem;
                     })
                 }
             </div>

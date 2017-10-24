@@ -51,12 +51,18 @@ h1 {
     top: 0;
 }
 
-.faces {
+.face {
     display: inline-block;
     cursor: pointer;
     margin: 4px 5px;
     width: 60px;
     height: auto;
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+.fade {
+    opacity: 0;
 }
 
 .happy-color {

@@ -4,6 +4,18 @@ export default class TraitItem extends React.Component {
     constructor() {
         super();
         this.state = {
+            happyClasses: [
+                "face",
+                "happy"
+            ],
+            neutralClasses: [
+                "face",
+                "neutral"
+            ],
+            sadClasses: [
+                "face",
+                "sad"
+            ],
             overlayClasses: [
                 "faces-overlay",
                 "none"
@@ -11,7 +23,7 @@ export default class TraitItem extends React.Component {
         }
     }
 
-    colorChange(e) {
+    mouseEnter(e) {
         const face = e.target.classList[1];
         let newClass = face + '-color';
 
@@ -35,19 +47,23 @@ export default class TraitItem extends React.Component {
     select(e) {
         let trait = this.props.trait;
         let face = e.target.classList[1];
-        console.log(e.target.onMouseOut);
-
-        e.target.removeAttr('onmouseout');
 
         let selection = {
             face: face,
             trait: trait
         }
         this.props.onSelect(selection);
+
+        this.setState({happyClasses: this.state.happyClasses.concat("fade")});
     }
 
     render() {
         let overlayClasses = this.state.overlayClasses;
+        let happyClasses = this.state.happyClasses;
+        let neutralClasses = this.state.neutralClasses;
+        let sadClasses = this.state.sadClasses;
+
+
         return (
             <div className="trait-item">
 
@@ -57,22 +73,22 @@ export default class TraitItem extends React.Component {
 
                 <div className={overlayClasses.join(' ')}>
                     <img
-                        className="faces happy"
+                        className={happyClasses.join(' ')}
                         src="../images/happy_white.png"
                         onClick={this.select.bind(this)}
-                        onMouseEnter={this.colorChange.bind(this)}
+                        onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
-                        className="faces neutral"
+                        className={neutralClasses.join(' ')}
                         src="../images/neutral_white.png"
                         onClick={this.select.bind(this)}
-                        onMouseEnter={this.colorChange.bind(this)}
+                        onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
-                        className="faces sad"
+                        className={sadClasses.join(' ')}
                         src="../images/sad_white.png"
                         onClick={this.select.bind(this)}
-                        onMouseEnter={this.colorChange.bind(this)}
+                        onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                 </div>
 

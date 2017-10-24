@@ -47,6 +47,7 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
+                <h1>Branding Game</h1>
                 <div className="container">
                     <TraitItems
                         traits={this.state.traits}
