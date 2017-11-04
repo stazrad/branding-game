@@ -1,24 +1,25 @@
+// IMPORT REACT //
 import React from 'react';
 
-export default class TraitItem extends React.Component {
+class TraitItem extends React.Component {
     constructor() {
         super();
         this.state = {
             happyClasses: [
-                "face",
-                "happy"
+                'face',
+                'happy'
             ],
             neutralClasses: [
-                "face",
-                "neutral"
+                'face',
+                'neutral'
             ],
             sadClasses: [
-                "face",
-                "sad"
+                'face',
+                'sad'
             ],
             overlayClasses: [
-                "faces-overlay",
-                "none"
+                'faces-overlay',
+                'none'
             ]
         }
     }
@@ -26,35 +27,30 @@ export default class TraitItem extends React.Component {
     mouseEnter(e) {
         const face = e.target.classList[1];
         let newClass = face + '-color';
-
         let updatedClasses = [
-            "faces-overlay",
+            'faces-overlay',
             newClass
         ]
-
         this.setState({overlayClasses: updatedClasses});
     }
 
     mouseOut() {
         let updatedClasses = [
-            "faces-overlay",
-            "none"
+            'faces-overlay',
+            'none'
         ]
-
         this.setState({overlayClasses: updatedClasses});
     }
 
     select(e) {
         let trait = this.props.trait;
         let face = e.target.classList[1];
-
         let selection = {
             face: face,
             trait: trait
         }
         this.props.onSelect(selection);
-
-        this.setState({happyClasses: this.state.happyClasses.concat("fade")});
+        this.setState({happyClasses: this.state.happyClasses.concat('fade')});
     }
 
     render() {
@@ -63,30 +59,29 @@ export default class TraitItem extends React.Component {
         let neutralClasses = this.state.neutralClasses;
         let sadClasses = this.state.sadClasses;
 
-
         return (
-            <div className="trait-item">
+            <div className='trait-item'>
 
-                <div className="trait">
+                <div className='trait'>
                     {this.props.trait}
                 </div>
 
                 <div className={overlayClasses.join(' ')}>
                     <img
                         className={happyClasses.join(' ')}
-                        src="../images/happy_white.png"
+                        src='../images/happy_white.png'
                         onClick={this.select.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
                         className={neutralClasses.join(' ')}
-                        src="../images/neutral_white.png"
+                        src='../images/neutral_white.png'
                         onClick={this.select.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
                         className={sadClasses.join(' ')}
-                        src="../images/sad_white.png"
+                        src='../images/sad_white.png'
                         onClick={this.select.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
@@ -96,3 +91,5 @@ export default class TraitItem extends React.Component {
         );
     }
 };
+
+export default TraitItem;

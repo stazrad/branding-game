@@ -1,5 +1,6 @@
-var webpack = require('webpack');
-var path = require('path');
+// PACKAGES //
+var webpack = require('webpack'),
+    path    = require('path');
 
 module.exports = {
     devtool: 'inline-source-map',

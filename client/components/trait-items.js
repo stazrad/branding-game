@@ -1,34 +1,28 @@
+// IMPORT REACT //
 import React from 'react';
-
+// COMPONENTS //
 import TraitItem from './trait-item';
 
-export default class TraitItems extends React.Component {
+class TraitItems extends React.Component {
     constructor(props) {
         super();
-
-        let traitItems = props.traits.map((trait, i) => {
-            let traitItem = <TraitItem
-                                key={i}
-                                trait={trait}
-                                onSelect={props.onSelect} />;
-            return traitItem;
-        })
-
         this.state = {
-            traitItems: traitItems
+            traits: props.traits
         }
     }
 
     render() {
-        let traitItems = this.state.traitItems;
+        let traits = this.state.traits;
         return (
             <div>
                 {
-                    this.state.traitItems.map((traitItem) => {
-                        return traitItem;
+                    traits.map((trait) => {
+                        return <TraitItem trait={trait} onSelect={this.props.onSelect} />;
                     })
                 }
             </div>
         )
     }
 };
+
+export default TraitItems;
