@@ -16,12 +16,16 @@ class TraitItems extends React.Component {
         return (
             <div>
                 {
-                    traits.map((trait) => {
-                        return <TraitItem trait={trait} onSelect={this.props.onSelect} />;
+                    traits.map((trait, i) => {
+                        return <TraitItem key={i} onSelect={this.props.onSelect} trait={trait} />;
                     })
                 }
             </div>
         )
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({traits:nextProps.traits});
     }
 };
 

@@ -31,7 +31,7 @@ class TraitItem extends React.Component {
             'faces-overlay',
             newClass
         ]
-        this.setState({overlayClasses: updatedClasses});
+        //this.setState({overlayClasses: updatedClasses});
     }
 
     mouseOut() {
@@ -42,7 +42,7 @@ class TraitItem extends React.Component {
         this.setState({overlayClasses: updatedClasses});
     }
 
-    select(e) {
+    onSelect(e) {
         let trait = this.props.trait;
         let face = e.target.classList[1];
         let selection = {
@@ -50,7 +50,7 @@ class TraitItem extends React.Component {
             trait: trait
         }
         this.props.onSelect(selection);
-        this.setState({happyClasses: this.state.happyClasses.concat('fade')});
+        //this.setState({happyClasses: this.state.happyClasses.concat('fade')});
     }
 
     render() {
@@ -58,35 +58,31 @@ class TraitItem extends React.Component {
         let happyClasses = this.state.happyClasses;
         let neutralClasses = this.state.neutralClasses;
         let sadClasses = this.state.sadClasses;
-
         return (
             <div className='trait-item'>
-
                 <div className='trait'>
                     {this.props.trait}
                 </div>
-
                 <div className={overlayClasses.join(' ')}>
                     <img
                         className={happyClasses.join(' ')}
-                        src='../images/happy_white.png'
-                        onClick={this.select.bind(this)}
+                        src='../images/happy_black.png'
+                        onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
                         className={neutralClasses.join(' ')}
-                        src='../images/neutral_white.png'
-                        onClick={this.select.bind(this)}
+                        src='../images/neutral_black.png'
+                        onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
                         className={sadClasses.join(' ')}
-                        src='../images/sad_white.png'
-                        onClick={this.select.bind(this)}
+                        src='../images/sad_black.png'
+                        onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                 </div>
-
             </div>
         );
     }
