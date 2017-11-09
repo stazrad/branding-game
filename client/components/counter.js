@@ -6,16 +6,16 @@ class Counter extends React.Component {
         super();
         this.state = {
             traits: props.traits,
-            traitsSelected: props.traitsSelected
+            numOfTraitsSelected: props.numOfTraitsSelected
         }
     }
 
     render() {
-        let traitsSelected = this.state.traitsSelected;
+        let numOfTraitsSelected = this.state.numOfTraitsSelected;
         let traitsTotal = this.state.traits.length;
         return (
-            <div>
-                <div className="counter">{traitsSelected} / {traitsTotal}</div>
+            <div className='counter-container'>
+                <div className='counter'>{numOfTraitsSelected}<span>/ {traitsTotal}</span></div>
             </div>
         )
     }
@@ -23,7 +23,7 @@ class Counter extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.setState({
             traits: nextProps.traits,
-            traitsSelected: nextProps.traitsSelected
+            numOfTraitsSelected: nextProps.numOfTraitsSelected
         });
     }
 };

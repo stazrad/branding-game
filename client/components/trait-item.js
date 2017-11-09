@@ -1,84 +1,83 @@
 // IMPORT REACT //
 import React from 'react';
+// COMPONENTS //
+import Modal from './modal';
 
 class TraitItem extends React.Component {
-    constructor() {
+
+    constructor(props) {
         super();
+        let index = props.index;
+        let definition = props.traits[index].definition;
         this.state = {
-            happyClasses: [
-                'face',
-                'happy'
-            ],
-            neutralClasses: [
-                'face',
-                'neutral'
-            ],
-            sadClasses: [
-                'face',
-                'sad'
-            ],
-            overlayClasses: [
-                'faces-overlay',
-                'none'
-            ]
+            definition: definition,
+            showModal: false
         }
+    }
+
+    modalShow(e) {
+        let index = this.props.index;
+        let definition = this.props.traits[index].definition;
+        this.setState({definition, showModal: true});
+    }
+
+    modalHide(e) {
+        this.setState({showModal: false});
     }
 
     mouseEnter(e) {
-        const face = e.target.classList[1];
-        let newClass = face + '-color';
-        let updatedClasses = [
-            'faces-overlay',
-            newClass
-        ]
-        //this.setState({overlayClasses: updatedClasses});
+        let src = e.target.src;
+        let hover = src.replace('black', 'hover');
+        e.target.src = hover;
     }
 
-    mouseOut() {
-        let updatedClasses = [
-            'faces-overlay',
-            'none'
-        ]
-        this.setState({overlayClasses: updatedClasses});
+    mouseOut(e) {
+        let src = e.target.src;
+        let black = src.replace('hover', 'black');
+        e.target.src = black;
     }
 
     onSelect(e) {
-        let trait = this.props.trait;
+        let index = this.props.index;
+        // get object from traits array
+        let selection = this.props.traits[index];
         let face = e.target.classList[1];
-        let selection = {
-            face: face,
-            trait: trait
-        }
+        selection.face = face;
+        selection.index = parseInt(index);
         this.props.onSelect(selection);
-        //this.setState({happyClasses: this.state.happyClasses.concat('fade')});
     }
 
     render() {
-        let overlayClasses = this.state.overlayClasses;
-        let happyClasses = this.state.happyClasses;
-        let neutralClasses = this.state.neutralClasses;
-        let sadClasses = this.state.sadClasses;
+
         return (
-            <div className='trait-item'>
+            <div className='trait-item' id={this.props.index}>
                 <div className='trait'>
-                    {this.props.trait}
+                    <span className='trait-word'>{this.props.trait}
+                        <div className='question-mark'>
+                            <img
+                                src='../images/question_mark.png'
+                                onMouseEnter={this.modalShow.bind(this)}
+                                onMouseOut={this.modalHide.bind(this)} />
+                        </div>
+                        {this.state.showModal ? <Modal definition={this.state.definition} /> : null }
+                    </span>
                 </div>
-                <div className={overlayClasses.join(' ')}>
+                <div className='faces-overlay'>
                     <img
-                        className={happyClasses.join(' ')}
-                        src='../images/happy_black.png'
+                        className='face'
+                        src='../images/faces/happy_black.png'
                         onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
-                        className={neutralClasses.join(' ')}
-                        src='../images/neutral_black.png'
+                        className='face'
+                        src='../images/faces/neutral_black.png'
                         onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
-                        className={sadClasses.join(' ')}
-                        src='../images/sad_black.png'
+                        className='face'
+                        src='../images/faces/sad_black.png'
                         onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
