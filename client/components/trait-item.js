@@ -64,19 +64,19 @@ class TraitItem extends React.Component {
                 </div>
                 <div className='faces-overlay'>
                     <img
-                        className='face'
+                        className='face happy'
                         src='../images/faces/happy_black.png'
                         onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
-                        className='face'
+                        className='face neutral'
                         src='../images/faces/neutral_black.png'
                         onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
                         onMouseOut={this.mouseOut.bind(this)} />
                     <img
-                        className='face'
+                        className='face sad'
                         src='../images/faces/sad_black.png'
                         onClick={this.onSelect.bind(this)}
                         onMouseEnter={this.mouseEnter.bind(this)}
