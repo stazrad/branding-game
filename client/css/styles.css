@@ -48,6 +48,7 @@ a {
 .container {
     width: 90%;
     height: 80%;
+    min-height: 330px;
     margin: auto;
 }
 
@@ -176,4 +177,10 @@ a {
 }
 .footer-tag>a:hover {
     color: #3b80c2;
+}
+
+@media (max-width: 1024px) {
+    .trait-item {
+        width: 100%;
+    }
 }

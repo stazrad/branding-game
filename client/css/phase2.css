@@ -1,0 +1,27 @@
+.phase2-trait-item {
+    margin-bottom: 160px;
+}
+
+.phase2-word {
+    font-size: 24px;
+    font-style: italic;
+    width: 50%;
+    line-height: 60px;
+    border-bottom: 1px solid #c7c7c7;
+}
+.phase2-word:first-of-type {
+    border-top: 1px solid #c7c7c7;
+}
+
+.phase2-words {
+    position: absolute;
+    top: 220px;
+    width: 100%;
+    margin-left: 27%;
+}
+
+@media (max-width: 1024px) {
+    .phase2-words {
+        margin-left: 25%;
+    }
+}

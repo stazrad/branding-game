@@ -1,7 +1,8 @@
 // IMPORT REACT //
 import React from 'react';
+import axios from 'axios';
 // COMPONENTS //
-import Modal from './modal';
+import Modal from '../../layout/modal';
 
 class TraitItem extends React.Component {
 

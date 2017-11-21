@@ -3,10 +3,10 @@ import React from 'react';
 // PACKAGES //
 import axios from 'axios';
 // COMPONENTS //
-import Counter from './counter';
 import Header from './layout/header';
 import Footer from './layout/footer';
-import TraitItems from './trait-items';
+import Phase1 from './phases/phase1';
+import Phase2 from './phases/phase2';
 // DATA //
 import traitsList from '../json/traits-list-definitions';
 
@@ -14,6 +14,7 @@ export default class App extends React.Component {
     constructor() {
         super();
         this.state = {
+            phase: 1,
             activeTraits: [],
             stack: {
                 happy: [],
@@ -59,20 +60,40 @@ export default class App extends React.Component {
         this.setState({activeTraits, numOfTraitsSelected: numOfTraitsSelected + 1});
     }
 
+    nextPhase(stack) {
+        let phase = this.state.phase + 1;
+        let numOfTraitsDisplayed = this.state.numOfTraitsDisplayed;
+        let activeTraits = stack.slice(0,numOfTraitsDisplayed);
+        this.setState({
+            activeTraits,
+            numOfTraitsSelected: 0,
+            phase
+        });
+    }
+
     render() {
+        let phase = this.state.phase;
+        let phase1 = <Phase1
+                        activeTraits={this.state.activeTraits}
+                        onSelect={this.onSelect.bind(this)}
+                        traits={this.state.traits}
+                        numOfTraitsSelected={this.state.numOfTraitsSelected} />
+        let phase2 = <Phase2
+                        activeTraits={this.state.activeTraits}
+                        onSelect={this.onSelect.bind(this)}
+                        traits={this.state.stack.happy}
+                        numOfTraitsSelected={this.state.numOfTraitsSelected} />
+
         return (
             <div>
                 <Header />
+                <button onClick={this.nextPhase.bind(this,this.state.stack.happy)}>NEXT PHASE</button>
                 <div className="container">
-                    <TraitItems activeTraits={this.state.activeTraits} traits={this.state.traits} onSelect={this.onSelect.bind(this)} />
-                    <Counter traits={this.state.traits} numOfTraitsSelected={this.state.numOfTraitsSelected}/>
+                    {phase == 1 ? phase1 : null}
+                    {phase == 2 ? phase2 : null}
                 </div>
                 <Footer />
             </div>
         );
-    }
-
-    componentDidMount() {
-
     }
 };
