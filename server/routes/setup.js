@@ -1,6 +1,20 @@
 // PACKAGES //
-var fetch = require('fetch'),
+var cuid  = require('cuid'),
+    fetch = require('fetch'),
     fs    = require('fs');
+
+// IMPORTS //
+var definitions = require('../../client/json/traits-list-definitions');
+
+var addUid = function() {
+    definitions.forEach(function(def) {
+        var id = cuid();
+        def.uid = id;
+        def.group = null;
+    });
+    fs.appendFileSync('./client/json/traits-list-definition.txt', JSON.stringify(definitions, null, 4));
+};
+//addUid();
 
 // POST /define/:word
 exports.postDefine = function(req, res) {

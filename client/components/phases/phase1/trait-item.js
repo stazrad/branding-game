@@ -1,6 +1,7 @@
 // IMPORT REACT //
 import React from 'react';
 import axios from 'axios';
+
 // COMPONENTS //
 import Modal from '../../layout/modal';
 

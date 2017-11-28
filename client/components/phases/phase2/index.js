@@ -1,5 +1,6 @@
 // IMPORT REACT //
 import React from 'react';
+
 // IMPORT COMPONENTS //
 import Counter from '../../layout/counter';
 import TraitItems from './trait-items';

@@ -1,0 +1,602 @@
+[
+  {
+    "trait": "Casual",
+    "definition": "relaxed and unconcerned",
+    "group": null,
+    "uid": "cjaj5as640000yw04cd29xs4l"
+  },
+  {
+    "trait": "Formal",
+    "definition": "done in accordance with convention or etiquette; suitable for or constituting an official or important occasion",
+    "group": null,
+    "uid": "cjaj5as640001yw04ux9iikkv"
+  },
+  {
+    "trait": "Playful",
+    "definition": "fond of games and amusement; light-hearted",
+    "group": null,
+    "uid": "cjaj5as640002yw04lnxkmrb0"
+  },
+  {
+    "trait": "Professional",
+    "definition": "relating to or belonging to a profession",
+    "group": null,
+    "uid": "cjaj5as640003yw043imd9f2z"
+  },
+  {
+    "trait": "Niche",
+    "definition": "relating to or aimed at a small specialized group or market",
+    "group": null,
+    "uid": "cjaj5as640004yw04b70bzqes"
+  },
+  {
+    "trait": "Mass-Market",
+    "definition": "produced and distributed in large quantities and intended to appeal to the widest range of consumers",
+    "group": null,
+    "uid": "cjaj5as640005yw0436oc62ko"
+  },
+  {
+    "trait": "Relatable",
+    "definition": "easy to relate to, sympathize with, or identify with",
+    "group": null,
+    "uid": "cjaj5as640006yw04iy6zk13k"
+  },
+  {
+    "trait": "Mysterious",
+    "definition": "difficult or impossible to understand, explain, or identify",
+    "group": null,
+    "uid": "cjaj5as640007yw04z8txoeu4"
+  },
+  {
+    "trait": "Ordinary",
+    "definition": "with no special or distinctive features; normal",
+    "group": null,
+    "uid": "cjaj5as640008yw04fmm2k42k"
+  },
+  {
+    "trait": "Best-In-Class",
+    "definition": "the highest current performance level in an industry, used as a standard or benchmark to be equaled or exceeded",
+    "group": null,
+    "uid": "cjaj5as640009yw041mon6mgh"
+  },
+  {
+    "trait": "Basic",
+    "definition": "forming an essential foundation or starting point; fundamental",
+    "group": null,
+    "uid": "cjaj5as64000ayw04697nxlze"
+  },
+  {
+    "trait": "High-End",
+    "definition": "denoting the most expensive of a range of products",
+    "group": null,
+    "uid": "cjaj5as64000byw04ttwh8ur2"
+  },
+  {
+    "trait": "Energetic",
+    "definition": "showing or involving great activity or vitality",
+    "group": null,
+    "uid": "cjaj5as64000cyw040ulrg4be"
+  },
+  {
+    "trait": "Calm",
+    "definition": "not showing or feeling nervousness, anger, or other strong emotions",
+    "group": null,
+    "uid": "cjaj5as64000dyw04yeimjemv"
+  },
+  {
+    "trait": "Adventurous",
+    "definition": "willing to take risks or to try out new methods, ideas, or experiences",
+    "group": null,
+    "uid": "cjaj5as64000eyw046esgwgp4"
+  },
+  {
+    "trait": "Daring",
+    "definition": "adventurous or audaciously bold",
+    "group": null,
+    "uid": "cjaj5as65000fyw047wmswt3f"
+  },
+  {
+    "trait": "Laid-Back",
+    "definition": "relaxed and easy-going",
+    "group": null,
+    "uid": "cjaj5as65000gyw04pzvafsk6"
+  },
+  {
+    "trait": "Aggressive",
+    "definition": "vigorously energetic, esp. in the use of initiative and forcefulness; boldly assertive",
+    "group": null,
+    "uid": "cjaj5as65000hyw04bbi2doa7"
+  },
+  {
+    "trait": "Rigorous",
+    "definition": "extremely thorough and careful",
+    "group": null,
+    "uid": "cjaj5as65000iyw04o69grq6t"
+  },
+  {
+    "trait": "Effortless",
+    "definition": "requiring no physical or mental exertion",
+    "group": null,
+    "uid": "cjaj5as65000jyw041e47xl53"
+  },
+  {
+    "trait": "Cutting-Edge",
+    "definition": "at the forefront of people or things in a field of activity; leading",
+    "group": null,
+    "uid": "cjaj5as65000kyw04nbpzeh6q"
+  },
+  {
+    "trait": "Trusted",
+    "definition": "believe in the reliability, truth, ability, or strength of",
+    "group": null,
+    "uid": "cjaj5as65000lyw04qc0oatnn"
+  },
+  {
+    "trait": "Fun",
+    "definition": "enjoyment, amusement, or light-hearted pleasure",
+    "group": null,
+    "uid": "cjaj5as65000myw046gavxzpk"
+  },
+  {
+    "trait": "Serious",
+    "definition": "demanding or characterized by careful consideration or application",
+    "group": null,
+    "uid": "cjaj5as65000nyw0434nxkypz"
+  },
+  {
+    "trait": "Crafted",
+    "definition": "exercise skill in making (something)",
+    "group": null,
+    "uid": "cjaj5as65000oyw045hw03qvq"
+  },
+  {
+    "trait": "Standardized",
+    "definition": "capable of replacing or changing places with something else",
+    "group": null,
+    "uid": "cjaj5as65000pyw04496jvli5"
+  },
+  {
+    "trait": "Welcoming",
+    "definition": "warm and comfortable",
+    "group": null,
+    "uid": "cjaj5as65000qyw04wfkrwb6f"
+  },
+  {
+    "trait": "Reserved",
+    "definition": "cool or formal in manner; restrained, silent, or reticent",
+    "group": null,
+    "uid": "cjaj5as65000ryw04re849rxj"
+  },
+  {
+    "trait": "Futuristic",
+    "definition": "having or involving very modern technology or design",
+    "group": null,
+    "uid": "cjaj5as65000syw04s1lvw7wo"
+  },
+  {
+    "trait": "Nostalgic",
+    "definition": "feeling, evoking, or characterized by nostalgia",
+    "group": null,
+    "uid": "cjaj5as65000tyw040tj5zvfr"
+  },
+  {
+    "trait": "Imaginative",
+    "definition": "having or showing creativity or inventiveness",
+    "group": null,
+    "uid": "cjaj5as65000uyw04iwj349f0"
+  },
+  {
+    "trait": "Practical",
+    "definition": "of or concerned with the actual doing or use of something rather than with theory and ideas",
+    "group": null,
+    "uid": "cjaj5as65000vyw04fodciwsl"
+  },
+  {
+    "trait": "Experimental",
+    "definition": "(of a new invention or product) based on untested ideas or techniques and not yet established or finalized",
+    "group": null,
+    "uid": "cjaj5as65000wyw04atciyixz"
+  },
+  {
+    "trait": "Conventional",
+    "definition": "based on or in accordance with what is generally done or believed",
+    "group": null,
+    "uid": "cjaj5as65000xyw044o86199t"
+  },
+  {
+    "trait": "Cheeky",
+    "definition": "showing a lack of respect or politeness in a way that is amusing or appealing",
+    "group": null,
+    "uid": "cjaj5as65000yyw0430i8a9rp"
+  },
+  {
+    "trait": "Respectful",
+    "definition": "feeling or showing deference and respect",
+    "group": null,
+    "uid": "cjaj5as65000zyw04j02gkhyb"
+  },
+  {
+    "trait": "Geeky",
+    "definition": "unfashionable and socially inept",
+    "group": null,
+    "uid": "cjaj5as650010yw04j1vuprht"
+  },
+  {
+    "trait": "Wise",
+    "definition": "having or showing experience, knowledge, and good judgement",
+    "group": null,
+    "uid": "cjaj5as650011yw04l583ofod"
+  },
+  {
+    "trait": "Organic",
+    "definition": "relating to or derived from living matter",
+    "group": null,
+    "uid": "cjaj5as650012yw041k1kjxxg"
+  },
+  {
+    "trait": "Industrial",
+    "definition": "relating to or characterized by industry",
+    "group": null,
+    "uid": "cjaj5as650013yw042veuthkt"
+  },
+  {
+    "trait": "Small",
+    "definition": "of a size that is less than normal or usual",
+    "group": null,
+    "uid": "cjaj5as650014yw04ikhqm2lq"
+  },
+  {
+    "trait": "Big",
+    "definition": "of considerable size or extent",
+    "group": null,
+    "uid": "cjaj5as650015yw04u0cprl9g"
+  },
+  {
+    "trait": "Idealistic",
+    "definition": "characterized by idealism; unrealistically aiming for perfection",
+    "group": null,
+    "uid": "cjaj5as650016yw0486y91o7w"
+  },
+  {
+    "trait": "Realistic",
+    "definition": "having or showing a sensible and practical idea of what can be achieved or expected",
+    "group": null,
+    "uid": "cjaj5as650017yw04ed2a3hu0"
+  },
+  {
+    "trait": "Quiet",
+    "definition": "characterized by an absence of turbulent motion or disturbance; peaceful, calm, or tranquil",
+    "group": null,
+    "uid": "cjaj5as650018yw045ckl09ba"
+  },
+  {
+    "trait": "Bold",
+    "definition": "showing a willingness to take risks; confident and courageous",
+    "group": null,
+    "uid": "cjaj5as650019yw04dqbe1fc1"
+  },
+  {
+    "trait": "Optimistic",
+    "definition": "hopeful and confident about the future",
+    "group": null,
+    "uid": "cjaj5as65001ayw044iue88sg"
+  },
+  {
+    "trait": "Pessimistic",
+    "definition": "tending to see the worst aspect of things or believe that the worst will happen",
+    "group": null,
+    "uid": "cjaj5as65001byw04zb2ok4cm"
+  },
+  {
+    "trait": "Multifaceted",
+    "definition": "having many sides",
+    "group": null,
+    "uid": "cjaj5as65001cyw04s1kyruwl"
+  },
+  {
+    "trait": "Focused",
+    "definition": "directing a great deal of attention, interest, or activity towards a particular aim",
+    "group": null,
+    "uid": "cjaj5as65001dyw04pe56sz8s"
+  },
+  {
+    "trait": "Curious",
+    "definition": "eager to know or learn something",
+    "group": null,
+    "uid": "cjaj5as66001eyw04t4w2b31x"
+  },
+  {
+    "trait": "Certain",
+    "definition": "able to be firmly relied on to happen or be the case",
+    "group": null,
+    "uid": "cjaj5as66001fyw04160smb3f"
+  },
+  {
+    "trait": "Dynamic",
+    "definition": "characterized by constant change, activity, or progress",
+    "group": null,
+    "uid": "cjaj5as66001gyw04nj5xqkdu"
+  },
+  {
+    "trait": "Steady",
+    "definition": "not able to be moved or disturbed easily; stable",
+    "group": null,
+    "uid": "cjaj5as66001hyw04i5eqcg2k"
+  },
+  {
+    "trait": "Scientific",
+    "definition": "based on or characterized by the methods and principles of science",
+    "group": null,
+    "uid": "cjaj5as66001iyw04em51yxn4"
+  },
+  {
+    "trait": "Artistic",
+    "definition": "having or revealing natural creative skill",
+    "group": null,
+    "uid": "cjaj5as66001jyw04552tat6w"
+  },
+  {
+    "trait": "Relaxed",
+    "definition": "free from tension and anxiety",
+    "group": null,
+    "uid": "cjaj5as66001kyw045wlligss"
+  },
+  {
+    "trait": "Disciplined",
+    "definition": "showing a controlled form of behaviour or way of working",
+    "group": null,
+    "uid": "cjaj5as66001lyw04pfiriqmt"
+  },
+  {
+    "trait": "Surprising",
+    "definition": "causing surprise; unexpected",
+    "group": null,
+    "uid": "cjaj5as66001myw04o3fjlsg4"
+  },
+  {
+    "trait": "Dependable",
+    "definition": "trustworthy and reliable",
+    "group": null,
+    "uid": "cjaj5as66001nyw041d2055br"
+  },
+  {
+    "trait": "Open-Minded",
+    "definition": "willing to consider new ideas; unprejudiced",
+    "group": null,
+    "uid": "cjaj5as66001oyw04lm7gwtqz"
+  },
+  {
+    "trait": "Opinionated",
+    "definition": "characterized by conceited assertiveness and dogmatism",
+    "group": null,
+    "uid": "cjaj5as66001pyw04vjk5j5z4"
+  },
+  {
+    "trait": "Approachable",
+    "definition": "easy to meet and know; accesible",
+    "group": null,
+    "uid": "cjaj5as66001qyw04yuujkusn"
+  },
+  {
+    "trait": "Exclusive",
+    "definition": "excluding or not admitting other things",
+    "group": null,
+    "uid": "cjaj5as66001ryw04xvspdfvi"
+  },
+  {
+    "trait": "Emotional",
+    "definition": "appealing to or arousing emotion",
+    "group": null,
+    "uid": "cjaj5as66001syw04uf0ljbdl"
+  },
+  {
+    "trait": "Analytical",
+    "definition": "relating to or using analysis or logical reasoning",
+    "group": null,
+    "uid": "cjaj5as66001tyw04ujklqjav"
+  },
+  {
+    "trait": "Intuitive",
+    "definition": "using or based on what one feels to be true even without conscious reasoning; instinctive",
+    "group": null,
+    "uid": "cjaj5as66001uyw04bqqjgpyg"
+  },
+  {
+    "trait": "Technical",
+    "definition": "relating to a particular subject, art, or craft, or its techniques",
+    "group": null,
+    "uid": "cjaj5as66001vyw0406utynvb"
+  },
+  {
+    "trait": "Clever",
+    "definition": "quick to understand, learn, and devise or apply ideas; intelligent",
+    "group": null,
+    "uid": "cjaj5as66001wyw04iihp3a3d"
+  },
+  {
+    "trait": "Sincere",
+    "definition": "free from pretence or deceit; proceeding from genuine feelings",
+    "group": null,
+    "uid": "cjaj5as66001xyw04q2an6fcx"
+  },
+  {
+    "trait": "Vibrant",
+    "definition": "full of energy and life",
+    "group": null,
+    "uid": "cjaj5as66001yyw04jjxh3rq1"
+  },
+  {
+    "trait": "Subtle",
+    "definition": "(especially of a change or distinction) so delicate or precise as to be difficult to analyse or describe",
+    "group": null,
+    "uid": "cjaj5as66001zyw04ye51sgek"
+  },
+  {
+    "trait": "Progressive",
+    "definition": "happening or developing gradually or in stages",
+    "group": null,
+    "uid": "cjaj5as660020yw04ub76k4mm"
+  },
+  {
+    "trait": "Traditional",
+    "definition": "existing in or as part of a tradition; long-established",
+    "group": null,
+    "uid": "cjaj5as660021yw04g0e5ovvh"
+  },
+  {
+    "trait": "Modern",
+    "definition": "relating to the present or recent times as opposed to the remote past",
+    "group": null,
+    "uid": "cjaj5as660022yw042z4jgzvz"
+  },
+  {
+    "trait": "Vintage",
+    "definition": "of lasting interest and importance; venerable; classic",
+    "group": null,
+    "uid": "cjaj5as660023yw04dtn088jj"
+  },
+  {
+    "trait": "Graceful",
+    "definition": "having or showing grace or elegance",
+    "group": null,
+    "uid": "cjaj5as660024yw044vhuvtl6"
+  },
+  {
+    "trait": "Rugged",
+    "definition": "without refinement or culture; rude",
+    "group": null,
+    "uid": "cjaj5as660025yw04h2y6h1fk"
+  },
+  {
+    "trait": "Humble",
+    "definition": "having or showing a modest or low estimate of one's importance",
+    "group": null,
+    "uid": "cjaj5as660026yw04jlqczp8q"
+  },
+  {
+    "trait": "Brash",
+    "definition": "self-assertive in a rude, noisy, or overbearing way",
+    "group": null,
+    "uid": "cjaj5as660027yw042ac3qpyq"
+  },
+  {
+    "trait": "Complex",
+    "definition": "consisting of many different and connected parts",
+    "group": null,
+    "uid": "cjaj5as660028yw04iquyd8s5"
+  },
+  {
+    "trait": "Simple",
+    "definition": "easily understood or done; presenting no difficulty",
+    "group": null,
+    "uid": "cjaj5as660029yw04govnmd06"
+  },
+  {
+    "trait": "Wide-Eyed",
+    "definition": "having or marked by unsophisticated or uncritical acceptance or admiration",
+    "group": null,
+    "uid": "cjaj5as66002ayw048zdfig4l"
+  },
+  {
+    "trait": "Sophisticated",
+    "definition": "having, revealing, or involving a great deal of worldly experience and knowledge of fashion and culture",
+    "group": null,
+    "uid": "cjaj5as66002byw04cu6lfwf2"
+  },
+  {
+    "trait": "Glamorous",
+    "definition": "full of excitement, adventure, and unusual activity",
+    "group": null,
+    "uid": "cjaj5as66002cyw04ytnvn29n"
+  },
+  {
+    "trait": "Austere",
+    "definition": "severe or strict in manner or attitude",
+    "group": null,
+    "uid": "cjaj5as67002dyw04967du5yj"
+  },
+  {
+    "trait": "Secure",
+    "definition": "able to be relied on; certain",
+    "group": null,
+    "uid": "cjaj5as67002eyw04jp9oy8h3"
+  },
+  {
+    "trait": "Free",
+    "definition": "able to act or be done as one wishes; not under the control of another",
+    "group": null,
+    "uid": "cjaj5as67002fyw04c428skao"
+  },
+  {
+    "trait": "Savvy",
+    "definition": "shrewdness and practical knowledge; the ability to make good judgements",
+    "group": null,
+    "uid": "cjaj5as67002gyw0466b4o7bi"
+  },
+  {
+    "trait": "Scholarly",
+    "definition": "involving or relating to serious academic study",
+    "group": null,
+    "uid": "cjaj5as67002hyw04yy2p8poy"
+  },
+  {
+    "trait": "Momentous",
+    "definition": "of great importance or significance, especially in having a bearing on future events",
+    "group": null,
+    "uid": "cjaj5as67002iyw04j45o7z40"
+  },
+  {
+    "trait": "Everyday",
+    "definition": "commonplace or usual; ordinary",
+    "group": null,
+    "uid": "cjaj5as67002jyw04ieo4cmag"
+  },
+  {
+    "trait": "Budding",
+    "definition": "at an early stage of development but showing promise or potential",
+    "group": null,
+    "uid": "cjaj5as67002kyw04efbwozzg"
+  },
+  {
+    "trait": "Accomplished",
+    "definition": "highly trained or skilled in a particular activity",
+    "group": null,
+    "uid": "cjaj5as67002lyw04lzmgxpm6"
+  },
+  {
+    "trait": "Radical",
+    "definition": "relating to or affecting the fundamental nature of something; far-reaching or thorough",
+    "group": null,
+    "uid": "cjaj5as67002myw04otecw3dr"
+  },
+  {
+    "trait": "Rational",
+    "definition": "based on or in accordance with reason or logic",
+    "group": null,
+    "uid": "cjaj5as67002nyw04m9auvqlu"
+  },
+  {
+    "trait": "Raw",
+    "definition": "in an unfinished, natural, or unrefined state; not treated by manufacturing or other processes",
+    "group": null,
+    "uid": "cjaj5as67002oyw04jmq66z8z"
+  },
+  {
+    "trait": "Refined",
+    "definition": "with impurities or unwanted elements having been removed by processing",
+    "group": null,
+    "uid": "cjaj5as67002pyw0455ogwf93"
+  },
+  {
+    "trait": "Current",
+    "definition": "belonging to the present time; happening or being used or done now",
+    "group": null,
+    "uid": "cjaj5as67002qyw046g6vg4kz"
+  },
+  {
+    "trait": "Timeless",
+    "definition": "not affected by the passage of time or changes in fashion",
+    "group": null,
+    "uid": "cjaj5as67002ryw04i29c1r7u"
+  }
+]

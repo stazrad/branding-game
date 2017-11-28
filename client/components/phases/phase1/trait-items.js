@@ -1,5 +1,6 @@
 // IMPORT REACT //
 import React from 'react';
+
 // COMPONENTS //
 import TraitItem from './trait-item';
 

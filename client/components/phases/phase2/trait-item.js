@@ -1,5 +1,6 @@
 // IMPORT REACT //
 import React from 'react';
+
 // COMPONENTS //
 import Modal from '../../layout/modal';
 

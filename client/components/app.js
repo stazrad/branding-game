@@ -1,14 +1,17 @@
 // IMPORT REACT //
 import React from 'react';
+
 // PACKAGES //
 import axios from 'axios';
+
 // COMPONENTS //
 import Header from './layout/header';
 import Footer from './layout/footer';
 import Phase1 from './phases/phase1';
 import Phase2 from './phases/phase2';
+
 // DATA //
-import traitsList from '../json/traits-list-definitions';
+import traitsList from '../json/traits-list-definitions.json';
 
 export default class App extends React.Component {
     constructor() {
