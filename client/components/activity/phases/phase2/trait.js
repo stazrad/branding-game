@@ -2,9 +2,9 @@
 import React from 'react';
 
 // COMPONENTS //
-import Modal from '../../layout/modal';
+import Modal from '../../layout/modules/modal';
 
-class TraitItem extends React.Component {
+class Trait extends React.Component {
 
     constructor(props) {
         super();
@@ -97,4 +97,4 @@ class TraitItem extends React.Component {
     }
 };
 
-export default TraitItem;
+export default Trait;

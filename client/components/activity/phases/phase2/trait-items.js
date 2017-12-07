@@ -2,7 +2,7 @@
 import React from 'react';
 
 // COMPONENTS //
-import TraitItem from './trait-item';
+import Trait from './trait';
 
 class TraitItems extends React.Component {
     constructor(props) {

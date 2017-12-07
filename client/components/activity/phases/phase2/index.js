@@ -2,10 +2,10 @@
 import React from 'react';
 
 // IMPORT COMPONENTS //
-import Counter from '../../layout/counter';
+import Counter from '../../layout/modules/counter';
 import TraitItems from './trait-items';
 
-class Phase1 extends React.Component {
+class Phase2 extends React.Component {
 
     render() {
 
@@ -18,4 +18,4 @@ class Phase1 extends React.Component {
     }
 };
 
-export default Phase1;
+export default Phase2;
