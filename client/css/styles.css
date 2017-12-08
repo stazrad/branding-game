@@ -147,13 +147,19 @@ a {
     cursor: default;
 }
 .counter {
+    display: inline-block;
+    text-align: right;
     margin: auto;
     margin-top: 5%;
     font-size: 20px;
     width: 70px;
 }
-.counter>span {
+.counter>.selected {
+    margin-right: 2px;
+}
+.counter>.total {
     float: right;
+    margin-left: 2px;
 }
 
 .footer {

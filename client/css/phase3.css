@@ -1,0 +1,33 @@
+.column-container {
+    padding-top: 80px;
+}
+
+.column {
+    display: inline-table;
+    min-height: 200px;
+    width: 180px;
+    margin: 0px 40px;
+}
+
+.column-trait {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 100;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+    /*.phase2-words {
+        margin-left: 25%;
+    }*/
+}

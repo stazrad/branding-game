@@ -69,6 +69,7 @@ class Trait extends React.Component {
                         className='face'
                         id='happy'
                         src='../images/faces/happy_black.png'
+                        title='positive reaction'
                         onClick={this.onClick}
                         onMouseEnter={this.mouseEnter}
                         onMouseOut={this.mouseOut} />
@@ -76,6 +77,7 @@ class Trait extends React.Component {
                         className='face'
                         id='neutral'
                         src='../images/faces/neutral_black.png'
+                        title='neutral reaction'
                         onClick={this.onClick}
                         onMouseEnter={this.mouseEnter}
                         onMouseOut={this.mouseOut} />
@@ -83,6 +85,7 @@ class Trait extends React.Component {
                         className='face'
                         id='sad'
                         src='../images/faces/sad_black.png'
+                        title='negative reaction'
                         onClick={this.onClick}
                         onMouseEnter={this.mouseEnter}
                         onMouseOut={this.mouseOut} />

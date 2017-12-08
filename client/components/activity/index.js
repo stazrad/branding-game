@@ -4,6 +4,7 @@ import React from 'react';
 // COMPONENTS //
 import Phase1 from './phases/phase1';
 import Phase2 from './phases/phase2';
+import Phase3 from './phases/phase3';
 
 // DATA //
 import traitsList from '../../json/traits-list-definitions.json';
@@ -94,10 +95,12 @@ export default class App extends React.Component {
     }
 
     nextPhase(stack) {
+        // set activeTraits array to first trait in happy stack
+        let activeTraits = [this.state.stack.happy[0]];
         let numOfTraitsSelected = 0;
         let phase = this.state.phase + 1;
         let traits = this.state.stack.happy;
-        this.setState({numOfTraitsSelected, phase, traits});
+        this.setState({activeTraits, numOfTraitsSelected, phase, traits});
     }
 
     render() {
@@ -112,6 +115,8 @@ export default class App extends React.Component {
                         numOfTraitsSelected={this.state.numOfTraitsSelected}
                         onSelect={this.onSelect}
                         traits={this.state.traits} />
+        let phase3 = <Phase3
+                        column={this.state.column} />
 
         return (
             <div>
@@ -119,6 +124,7 @@ export default class App extends React.Component {
                 <div className="container">
                     {phase == 1 ? phase1 : null}
                     {phase == 2 ? phase2 : null}
+                    {phase == 3 ? phase3 : null}
                 </div>
             </div>
         );

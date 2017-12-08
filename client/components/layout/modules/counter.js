@@ -8,7 +8,11 @@ class Counter extends React.Component {
         let traitsTotal = this.props.traitsTotal;
         return (
             <div className='counter-container'>
-                <div className='counter'>{traitsSelected}<span className='counter-total'>/{traitsTotal}</span></div>
+                <div className='counter'>
+                    <span className='selected'>{traitsSelected}</span>
+                    /
+                    <span className='total'>{traitsTotal}</span>
+                </div>
             </div>
         )
     }
