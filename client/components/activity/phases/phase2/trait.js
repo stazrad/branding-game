@@ -2,50 +2,38 @@
 import React from 'react';
 
 // COMPONENTS //
-import Modal from '../../layout/modules/modal';
+import Modal from '../../../layout/modules/modal';
 
 class Trait extends React.Component {
 
     constructor(props) {
-        super();
-        let index = props.index;
-        let definition = props.traits[index].definition;
+        super(props);
+        let definition = props.traitObj.definition;
+        let trait = props.traitObj;
         this.state = {
-            definition: definition,
+            definition,
+            trait,
             showModal: false
         }
+
+        this.modalShow = this.modalShow.bind(this);
+        this.modalHide = this.modalHide.bind(this);
+        this.onClick = this.onClick.bind(this);
     }
 
     modalShow(e) {
-        let index = this.props.index;
-        let definition = this.props.traits[index].definition;
-        this.setState({definition, showModal: true});
+        this.setState({showModal: true});
     }
 
     modalHide(e) {
         this.setState({showModal: false});
     }
 
-    mouseEnter(e) {
-        let src = e.target.src;
-        let hover = src.replace('black', 'hover');
-        e.target.src = hover;
-    }
-
-    mouseOut(e) {
-        let src = e.target.src;
-        let black = src.replace('hover', 'black');
-        e.target.src = black;
-    }
-
-    onSelect(e) {
-        let index = this.props.index;
-        // get object from traits array
-        let selection = this.props.traits[index];
-        let face = e.target.classList[1];
-        selection.face = face;
-        selection.index = parseInt(index);
-        this.props.onSelect(selection);
+    onClick(e) {
+        let column = e.target.id;
+        let trait = this.state.trait;
+        trait.column = column;
+        this.props.onSelect(trait);
     }
 
     render() {
@@ -53,7 +41,7 @@ class Trait extends React.Component {
         return (
             <div className='trait-item phase2-trait-item' id={this.props.index}>
                 <div className='trait'>
-                    <span className='trait-word'>{this.props.trait}
+                    <span className='trait-word'>{this.props.traitObj.trait}
                         <div className='question-mark'>
                             <img
                                 src='../images/question_mark.png'
@@ -64,33 +52,15 @@ class Trait extends React.Component {
                     </span>
                 </div>
                 <div className='phase2-words'>
-                    <div className='phase2-word'>
+                    <div onClick={this.onClick} className='phase2-word' id='look'>
                         Look
                     </div>
-                    <div className='phase2-word'>
+                    <div onClick={this.onClick} className='phase2-word' id='sound'>
                         Sound
                     </div>
-                    <div className='phase2-word'>
+                    <div onClick={this.onClick} className='phase2-word' id='feel'>
                         Feel
                     </div>
-                    {/* <img
-                        className='face happy'
-                        src='../images/faces/happy_black.png'
-                        onClick={this.onSelect.bind(this)}
-                        onMouseEnter={this.mouseEnter.bind(this)}
-                        onMouseOut={this.mouseOut.bind(this)} />
-                    <img
-                        className='face neutral'
-                        src='../images/faces/neutral_black.png'
-                        onClick={this.onSelect.bind(this)}
-                        onMouseEnter={this.mouseEnter.bind(this)}
-                        onMouseOut={this.mouseOut.bind(this)} />
-                    <img
-                        className='face sad'
-                        src='../images/faces/sad_black.png'
-                        onClick={this.onSelect.bind(this)}
-                        onMouseEnter={this.mouseEnter.bind(this)}
-                        onMouseOut={this.mouseOut.bind(this)} /> */}
                 </div>
             </div>
         );

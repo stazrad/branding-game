@@ -5,32 +5,22 @@ import React from 'react';
 import Trait from './trait';
 
 class TraitItems extends React.Component {
-    constructor(props) {
-        super();
-        this.state = {
-            activeTraits: props.activeTraits,
-            traits: props.traits
-        }
-    }
 
     render() {
-        let activeTraits = this.state.activeTraits;
-        let traits = this.state.traits;
+        let activeTraits = this.props.activeTraits;
+        let traits = this.props.traits;
         return (
             <div>
                 {
                     activeTraits.map(item => {
                         // set global identifier index number
                         let index = traits.findIndex(res => res.trait == item.trait);
-                        return <TraitItem key={index} index={index} onSelect={this.props.onSelect} trait={item.trait} traits={traits} />;
+                        item.index = index;
+                        return <Trait key={index} onSelect={this.props.onSelect} traitObj={item} traits={traits} />;
                     })
                 }
             </div>
         )
-    }
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({traits:nextProps.traits});
     }
 };
 

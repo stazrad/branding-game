@@ -8,9 +8,14 @@
     width: 50%;
     line-height: 60px;
     border-bottom: 1px solid #c7c7c7;
+    cursor: pointer;
 }
 .phase2-word:first-of-type {
     border-top: 1px solid #c7c7c7;
+}
+.phase2-word:hover {
+    background: black;
+    color: white;
 }
 
 .phase2-words {

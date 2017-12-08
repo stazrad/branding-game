@@ -51,7 +51,6 @@ class Trait extends React.Component {
     }
 
     render() {
-
         return (
             <div className='trait-item' id={this.props.index}>
                 <div className='trait'>

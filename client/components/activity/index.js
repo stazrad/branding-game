@@ -3,7 +3,7 @@ import React from 'react';
 
 // COMPONENTS //
 import Phase1 from './phases/phase1';
-//import Phase2 from './phases/phase2';
+import Phase2 from './phases/phase2';
 
 // DATA //
 import traitsList from '../../json/traits-list-definitions.json';
@@ -13,24 +13,69 @@ export default class App extends React.Component {
         super();
         this.state = {
             phase: 1,
-            traits: traitsList,
-            userStacks: null,
+            traits: [],
+            activeTraits: [],
             stack: {
                 happy: [],
                 neutral: [],
                 sad: []
             },
-            traits: traitsList
+            column: {
+                look: [],
+                sound: [],
+                feel: []
+            },
+            numOfTraitsDisplayed: 1, //multiples of 3
+            numOfTraitsSelected: 0
         };
 
         this.nextPhase = this.nextPhase.bind(this);
+        this.onSelect = this.onSelect.bind(this);
         this.pushTraitToStack = this.pushTraitToStack.bind(this);
     }
 
-    nextPhase(stack) {
-        let phase = this.state.phase + 1;
-        let userStacks = stack;
-        this.setState(phase, userStacks);
+    componentDidMount() {
+        // set active traits to the number of numOfTraitsDisplayed
+        let traits = traitsList;
+        let numOfTraitsDisplayed = this.state.numOfTraitsDisplayed;
+        let activeTraits = traits.slice(0,numOfTraitsDisplayed);
+        this.setState({activeTraits, traits});
+    }
+
+    onSelect(selection) {
+        let activeTraits        = this.state.activeTraits,
+            numOfTraitsSelected = this.state.numOfTraitsSelected + 1,
+            traits              = this.state.traits;
+        // go to next phase
+        if(numOfTraitsSelected == traits.length) {
+            return this.nextPhase();
+        }
+        // queue up next trait to activeTraits
+        let index = selection.index;
+        let nextTrait = traits[index + 1];
+        let i = activeTraits.findIndex(item => item.trait == selection.trait);
+        activeTraits[i] = nextTrait;
+        if(!selection.column) {
+            this.pushTraitToStack(selection);
+        } else {
+            this.pushTraitToColumn(selection);
+        }
+        this.setState({activeTraits, numOfTraitsSelected});
+    }
+
+    pushTraitToColumn(trait) {
+        let column = this.state.column;
+        switch (trait.column) {
+            case 'look':
+                column.look.push(trait);
+                break;
+            case 'sound':
+                column.sound.push(trait);
+                break;
+            case 'feel':
+                column.feel.push(trait);
+                break;
+        };
     }
 
     pushTraitToStack(trait) {
@@ -48,16 +93,29 @@ export default class App extends React.Component {
         };
     }
 
+    nextPhase(stack) {
+        let numOfTraitsSelected = 0;
+        let phase = this.state.phase + 1;
+        let traits = this.state.stack.happy;
+        this.setState({numOfTraitsSelected, phase, traits});
+    }
+
     render() {
         let phase = this.state.phase;
         let phase1 = <Phase1
-                        pushTraitToStack={this.pushTraitToStack}
+                        activeTraits={this.state.activeTraits}
+                        numOfTraitsSelected={this.state.numOfTraitsSelected}
+                        onSelect={this.onSelect}
                         traits={this.state.traits} />
-        let phase2 = null //<Phase2 stacks={this.state.userStacks} />
+        let phase2 = <Phase2
+                        activeTraits={this.state.activeTraits}
+                        numOfTraitsSelected={this.state.numOfTraitsSelected}
+                        onSelect={this.onSelect}
+                        traits={this.state.traits} />
 
         return (
             <div>
-                <button onClick={this.nextPhase.bind(this, this.state.stack.happy)}>NEXT PHASE</button>
+                <button onClick={this.nextPhase}>NEXT PHASE</button>
                 <div className="container">
                     {phase == 1 ? phase1 : null}
                     {phase == 2 ? phase2 : null}
