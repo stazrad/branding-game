@@ -47,10 +47,6 @@ export default class App extends React.Component {
         let activeTraits        = this.state.activeTraits,
             numOfTraitsSelected = this.state.numOfTraitsSelected + 1,
             traits              = this.state.traits;
-        // go to next phase
-        if(numOfTraitsSelected == traits.length) {
-            return this.nextPhase();
-        }
         // queue up next trait to activeTraits
         let index = selection.index;
         let nextTrait = traits[index + 1];
@@ -62,6 +58,10 @@ export default class App extends React.Component {
             this.pushTraitToColumn(selection);
         }
         this.setState({activeTraits, numOfTraitsSelected});
+        // go to next phase
+        if(numOfTraitsSelected == traits.length) {
+            return this.nextPhase();
+        }
     }
 
     pushTraitToColumn(trait) {

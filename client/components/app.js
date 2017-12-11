@@ -11,8 +11,10 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Header />
-                <Body />
+                <div id='wrapper'>
+                    <Header />
+                    <Body />
+                </div>
                 <Footer />
             </div>
         );

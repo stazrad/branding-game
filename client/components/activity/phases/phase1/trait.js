@@ -52,7 +52,7 @@ class Trait extends React.Component {
 
     render() {
         return (
-            <div className='trait-item' id={this.props.index}>
+            <div className='trait-item'>
                 <div className='trait'>
                     <span className='trait-word'>{this.props.traitObj.trait}
                         <div className='question-mark'>

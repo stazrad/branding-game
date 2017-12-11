@@ -6,13 +6,18 @@
     display: inline-table;
     min-height: 200px;
     width: 180px;
-    margin: 0px 40px;
+    margin: 0px 60px;
+    cursor: default;
 }
 
 .column-trait {
     margin-bottom: 8px;
     font-size: 20px;
     font-weight: 600;
+}
+
+.empty-column {
+    color: #d2d2d2 !important;
 }
 
 h1 {
@@ -24,6 +29,25 @@ h3 {
     font-weight: 100;
     font-style: italic;
     margin-bottom: 40px;
+}
+
+.download-container {
+    padding-top: 60px;
+}
+
+.download-button {
+    font-size: 14px;
+    border: none;
+    color: white;
+    background: black;
+    border-radius: 0px;
+    padding: 15px 60px;
+    cursor: pointer;
+}
+.download-button:hover {
+    color: black;
+    outline: 2px solid black;
+    background: white;
 }
 
 @media (max-width: 1024px) {
