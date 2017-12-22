@@ -22,9 +22,12 @@ class Column extends React.Component {
             <div className={'column ' + this.state.emptyClass}>
                 <h1>{this.props.name.toUpperCase()}</h1>
                 <h3>{this.props.description}</h3>
-                {traits.map((item, i) => {
-                    return <div key={i} className='column-trait'>{item.trait}</div>
-                })}
+                <div className='column-scroll'>
+                    {traits.map((item, i) => {
+                        return <div key={i} className='column-trait'>{item.trait}</div>
+                    })}
+                </div>
+                <div className='gradient'></div>
             </div>
         );
     }

@@ -120,7 +120,7 @@ export default class App extends React.Component {
 
         return (
             <div>
-                <button onClick={this.nextPhase}>NEXT PHASE</button>
+                {/* <button onClick={this.nextPhase}>NEXT PHASE</button> */}
                 <div className="container">
                     {phase == 1 ? phase1 : null}
                     {phase == 2 ? phase2 : null}

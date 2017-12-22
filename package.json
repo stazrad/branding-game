@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/server.js",
+    "build": "./node_modules/.bin/webpack -p",
+    "dev": "nodemon server/server.js --ignore ./client",
+    "watch":"./node_modules/.bin/webpack --watch",
     "dev-w": "webpack-dev-server",
-    "start": "node server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack"
+    "start": "node server/server.js"
   },
   "author": "Jake Webb",
   "license": "ISC",
