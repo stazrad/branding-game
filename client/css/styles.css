@@ -19,6 +19,28 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-size: 14px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    line-height: 2;
+}
+
+button {
+    font-size: 14px;
+    border: none;
+    color: white;
+    background: black;
+    border-radius: 0px;
+    padding: 15px 60px;
+    cursor: pointer;
+}
+button:hover {
+    color: black;
+    outline: 2px solid black;
+    background: white;
+}
+
 #wrapper {
     min-height: 100%;
     height: auto !important;
@@ -67,6 +89,33 @@ a {
     width: 90%;
     height: 330px;
     margin: auto;
+}
+
+.title {
+    margin-top: 90px;
+}
+
+.instructions {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.phase1 > p {
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.faces-sample {
+    width: 80%;
+    margin: auto;
+}
+.faces-sample > div {
+    display: inline-block;
+    width: 33%;
+}
+.faces-sample > span > div {
+    width: 100%;
 }
 
 .trait-item {
@@ -179,6 +228,13 @@ a {
     margin-left: 2px;
 }
 
+.in-text {
+    width: 20px;
+    margin-right: 2px;
+    position: relative;
+    top: 2px;
+}
+
 .footer {
     width: 100%;
     margin-top: 100px;
@@ -189,11 +245,10 @@ a {
     /*position: absolute;
     bottom: 0;*/
 }
-.footer>div {
+.footer-tag {
+    display: block;
     color: black;
     padding-top: 50px;
-}
-.footer-tag {
     font-style: italic;
     padding-left: 20px;
     font-weight: 100;

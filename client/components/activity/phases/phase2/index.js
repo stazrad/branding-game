@@ -10,8 +10,13 @@ class Phase2 extends React.Component {
     render() {
         return (
             <div>
-                <TraitItems activeTraits={this.props.activeTraits} onSelect={this.props.onSelect} traits={this.props.traits} />
-                <Counter traitsSelected={this.props.numOfTraitsSelected} traitsTotal={this.props.traits.length}/>
+                <TraitItems
+                    activeTraits={this.props.activeTraits}
+                    traits={this.props.traits}
+                    onSelect={this.props.onSelect} />
+                <Counter
+                    traitsSelected={this.props.numOfTraitsSelected}
+                    traitsTotal={this.props.traits.length} />
             </div>
         );
     }

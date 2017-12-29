@@ -1,28 +1,39 @@
 // IMPORT REACT //
-import React from 'react';
+import React from 'react'
 
-// IMPORT COMPONENTS //
-import Column from './column';
+class Phase1 extends React.Component {
 
-class Phase3 extends React.Component {
+    constructor(props) {
+        super(props)
+    }
 
     render() {
-        let descriptionLook = 'These are words that fall under what your brand should look like.';
-        let descriptionSound = 'These are words that fall under what your brand should sound like.';
-        let descriptionFeel = 'These are words that fall under what your brand should feel like.';
         return (
             <div>
-                <div className='column-container'>
-                    <Column name='look' description={descriptionLook} traits={this.props.column.look} />
-                    <Column name='sound' description={descriptionSound} traits={this.props.column.sound} />
-                    <Column name='feel' description={descriptionFeel} traits={this.props.column.feel} />
+                <div className='instructions phase1'>
+                    <h1 className='title'>02</h1>
+                    <p>For every <img className='in-text' src='../images/faces/neutral_black.png' /> you clicked, select if the word relates to how your brand looks, sounds, or feels.</p>
+                    <p>Even if it feels like a word fits multiple categories, you can only select one. <br />Choose what feels best.</p>
+                    <div className='faces-sample'>
+                        <div>
+                            <span>LOOK</span>
+                            <div>What your brand looks like - the visual design.</div>
+                        </div>
+                        <div>
+                            <span>SOUND</span>
+                            <div>How your brand sounds - the tone, the words.</div>
+                        </div>
+                        <div>
+                            <span>FEEL</span>
+                            <div>What your brand represents - your values.</div>
+                        </div>
+                    </div>
                 </div>
-                <div className='download-container'>
-                    <button className='download-button'>Dowload your brand profile</button>
-                </div>
-            </div>
-        );
-    }
-};
 
-export default Phase3;
+                <button onClick={this.props.nextPhase}>Start</button>
+            </div>
+        )
+    }
+}
+
+export default Phase1

@@ -14,10 +14,12 @@ class Trait extends React.Component {
             definition,
             trait,
             showModal: false
-        }
+        };
 
         this.modalShow = this.modalShow.bind(this);
         this.modalHide = this.modalHide.bind(this);
+        this.mouseEnter = this.mouseEnter.bind(this);
+        this.mouseOut = this.mouseOut.bind(this);
         this.onClick = this.onClick.bind(this);
     }
 
@@ -29,38 +31,64 @@ class Trait extends React.Component {
         this.setState({showModal: false});
     }
 
+    mouseEnter(e) {
+        let src = e.target.src;
+        let hover = src.replace('black', 'hover');
+        e.target.src = hover;
+    }
+
+    mouseOut(e) {
+        let src = e.target.src;
+        let black = src.replace('hover', 'black');
+        e.target.src = black;
+    }
+
     onClick(e) {
-        let column = e.target.id;
+        let face = e.target.id;
         let trait = this.state.trait;
-        trait.column = column;
+        trait.face = face;
         this.props.onSelect(trait);
     }
 
     render() {
-
         return (
-            <div className='trait-item phase2-trait-item' id={this.props.index}>
+            <div className='trait-item'>
                 <div className='trait'>
                     <span className='trait-word'>{this.props.traitObj.trait}
                         <div className='question-mark'>
                             <img
                                 src='../images/question_mark.png'
-                                onMouseEnter={this.modalShow.bind(this)}
-                                onMouseOut={this.modalHide.bind(this)} />
+                                onMouseEnter={this.modalShow}
+                                onMouseOut={this.modalHide} />
                         </div>
                         {this.state.showModal ? <Modal definition={this.state.definition} /> : null }
                     </span>
                 </div>
-                <div className='phase2-words'>
-                    <div onClick={this.onClick} className='phase2-word' id='look'>
-                        Look
-                    </div>
-                    <div onClick={this.onClick} className='phase2-word' id='sound'>
-                        Sound
-                    </div>
-                    <div onClick={this.onClick} className='phase2-word' id='feel'>
-                        Feel
-                    </div>
+                <div className='faces-overlay'>
+                    <img
+                        className='face'
+                        id='happy'
+                        src='../images/faces/happy_black.png'
+                        title='positive reaction'
+                        onClick={this.onClick}
+                        onMouseEnter={this.mouseEnter}
+                        onMouseOut={this.mouseOut} />
+                    <img
+                        className='face'
+                        id='neutral'
+                        src='../images/faces/neutral_black.png'
+                        title='neutral reaction'
+                        onClick={this.onClick}
+                        onMouseEnter={this.mouseEnter}
+                        onMouseOut={this.mouseOut} />
+                    <img
+                        className='face'
+                        id='sad'
+                        src='../images/faces/sad_black.png'
+                        title='negative reaction'
+                        onClick={this.onClick}
+                        onMouseEnter={this.mouseEnter}
+                        onMouseOut={this.mouseOut} />
                 </div>
             </div>
         );
