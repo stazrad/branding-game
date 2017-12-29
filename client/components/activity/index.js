@@ -98,12 +98,12 @@ export default class App extends React.Component {
     }
 
     nextPhase() {
-        // set activeTraits array to first trait in happy stack
         let phase = this.state.phase + 1
         if(phase != 4) {
             this.setState({phase})
             return
         }
+        // set activeTraits array to first trait in happy stack
         let activeTraits = [this.state.stack.happy[0]]
         let numOfTraitsSelected = 0
         let traits = this.state.stack.happy
@@ -125,8 +125,7 @@ export default class App extends React.Component {
                         numOfTraitsSelected={this.state.numOfTraitsSelected}
                         onSelect={this.onSelect}
                         traits={this.state.traits} />
-        let phase5 = <Phase5
-                        column={this.state.column} />
+        let phase5 = <Phase5 column={this.state.column} />
 
         return (
             <div>

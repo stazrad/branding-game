@@ -114,22 +114,33 @@ button:hover {
     display: inline-block;
     width: 33%;
 }
+.faces-sample > div > span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.faces-sample > div > div {
+    font-style: italic;
+    width: 80%;
+    margin: auto;
+}
 .faces-sample > span > div {
     width: 100%;
+}
+.faces-sample > div > .face {
+    cursor: default;
 }
 
 .trait-item {
     display: inline-grid;
     margin: 0px;
-    background: #f0f0f0;
+    background: white;
     line-height: 300px;
     text-align: center;
     width: 33%;
     height: 260px;
     position: relative;
-}
-.trait-item:nth-child(odd) {
-    background: white;
 }
 
 .trait {

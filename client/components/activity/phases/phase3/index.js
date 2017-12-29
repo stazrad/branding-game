@@ -12,7 +12,7 @@ class Phase1 extends React.Component {
             <div>
                 <div className='instructions phase1'>
                     <h1 className='title'>02</h1>
-                    <p>For every <img className='in-text' src='../images/faces/neutral_black.png' /> you clicked, select if the word relates to how your brand looks, sounds, or feels.</p>
+                    <p>For every <img className='in-text' src='../images/faces/happy_black.png' /> you clicked, select if the word relates to how your brand looks, sounds, or feels.</p>
                     <p>Even if it feels like a word fits multiple categories, you can only select one. <br />Choose what feels best.</p>
                     <div className='faces-sample'>
                         <div>
