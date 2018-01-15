@@ -3,26 +3,65 @@ import React from 'react'
 import { generate } from 'shortid'
 import jsPDF from 'jspdf'
 
-// IMPORT COMPONENTS //
+// IMPORTS //
 import Column from './column'
+import logoPDF from '../../../../images/pdf/logo'
+import headerPDF from '../../../../images/pdf/header'
 
 class Phase5 extends React.Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            descriptionLook: 'Use these words to help shape everything visual for your brand - logo, website, etc',
+            descriptionSound:'Use these words to help shape the content for your brand - web copy, emails, etc.',
+            descriptionFeel: 'Use these words to help shape your brand as a whole - the culture, overall feel, etc.'
+        }
 
         this.generatePDF = this.generatePDF.bind(this)
         this.generateUrl = this.generateUrl.bind(this)
     }
 
     generatePDF() {
+        // loop through base64 encoded image
+        // var newLogo = ''
+        // for(var i = 0; i < headerPDF.length; i++) {
+        //     if(headerPDF[i] != '\n') {
+        //         newLogo += headerPDF[i]
+        //     }
+        // }
+        // console.log(newLogo)
+
+        // text based column header
+        // // x, y
+        // // column titles
+        // doc.setFontSize(22)
+        // doc.setFontType('bold')
+        // doc.text('LOOK', 30, 60)
+        // doc.text('SOUND', 92, 60)
+        // doc.text('FEEL', 155, 60)
+        // // subheading
+        // doc.setFontSize(10)
+        // doc.setTextColor(150) // light-grey
+        // doc.setFontType('italic')
+        // doc.text(this.state.descriptionLook, 30, 70)
+
         const doc = new jsPDF()
         const body = document.getElementById('app')
-        console.log(body)
-        //doc.text('Hello world!', 10, 10)
-        doc.fromHTML(body.get(0), 15, 15, {
-        	'width': 170
-        });
+        const logo = `data:image/png;base64,${logoPDF}`
+        const header = `data:image/png;base64,${headerPDF}`
+        doc.addImage(logo, 'PNG', 95, 20, 20, 20)
+        doc.addImage(header, 'PNG', 5, 50, 200, 30)
+        // append traits
+        const baseY = 90
+        const columnLook = 35
+        const columnSound = 100
+        const columnFeel = 160
+        doc.setFontSize(10)
+        doc.setFontType('bold')
+        doc.text('Classy', 160, 90)
+
         doc.save('branding_profile_by_407.pdf')
     }
 
@@ -61,15 +100,12 @@ class Phase5 extends React.Component {
     }
 
     render() {
-        let descriptionLook = 'Use these words to help shape everything visual for your brand - logo, website, etc'
-        let descriptionSound = 'Use these words to help shape the content for your brand - web copy, emails, etc.'
-        let descriptionFeel = 'Use these words to help shape your brand as a whole - the culture, overall feel, etc.'
         return (
             <div>
                 <div className='column-container'>
-                    <Column name='look' description={descriptionLook} traits={this.props.column.look} />
-                    <Column name='sound' description={descriptionSound} traits={this.props.column.sound} />
-                    <Column name='feel' description={descriptionFeel} traits={this.props.column.feel} />
+                    <Column name='look' description={this.state.descriptionLook} traits={this.props.column.look} />
+                    <Column name='sound' description={this.state.descriptionSound} traits={this.props.column.sound} />
+                    <Column name='feel' description={this.state.descriptionFeel} traits={this.props.column.feel} />
                 </div>
                 <div className='download-container'>
                     <button className='download-button' onClick={this.generatePDF}>Dowload your brand profile</button>

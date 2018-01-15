@@ -16,7 +16,7 @@ export default class App extends React.Component {
     constructor() {
         super()
         this.state = {
-            phase: 0,
+            phase: 5,
             traits: [],
             activeTraits: [],
             stack: {
