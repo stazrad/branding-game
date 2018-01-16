@@ -7,6 +7,7 @@ import jsPDF from 'jspdf'
 import Column from './column'
 import logoPDF from '../../../../images/pdf/logo'
 import headerPDF from '../../../../images/pdf/header'
+import footerPDF from '../../../../images/pdf/footer'
 
 class Phase5 extends React.Component {
 
@@ -26,9 +27,9 @@ class Phase5 extends React.Component {
     generatePDF() {
         // loop through base64 encoded image
         // var newLogo = ''
-        // for(var i = 0; i < headerPDF.length; i++) {
-        //     if(headerPDF[i] != '\n') {
-        //         newLogo += headerPDF[i]
+        // for(var i = 0; i < footerPDF.length; i++) {
+        //     if(footerPDF[i] != '\n') {
+        //         newLogo += footerPDF[i]
         //     }
         // }
         // console.log(newLogo)
@@ -48,21 +49,93 @@ class Phase5 extends React.Component {
         // doc.text(this.state.descriptionLook, 30, 70)
 
         const doc = new jsPDF()
-        const body = document.getElementById('app')
+        doc.setFontSize(10)
+        doc.setTextColor(150) // light-grey
+        doc.setFontType('italic')
         const logo = `data:image/png;base64,${logoPDF}`
         const header = `data:image/png;base64,${headerPDF}`
-        doc.addImage(logo, 'PNG', 95, 20, 20, 20)
+        const footer = `data:image/png;base64,${footerPDF}`
+        doc.addImage(logo, 'PNG', 95, 12, 20, 20)
+        doc.text('www.fourohseven.com', 86, 38)
         doc.addImage(header, 'PNG', 5, 50, 200, 30)
+        doc.addImage(footer, 'PNG', 0, 268, 215, 30)
         // append traits
-        const baseY = 90
-        const columnLook = 35
-        const columnSound = 100
-        const columnFeel = 160
-        doc.setFontSize(10)
+        doc.setFontSize(12)
+        doc.setTextColor(0) // black
         doc.setFontType('bold')
-        doc.text('Classy', 160, 90)
+        let look = {
+            x: 38,
+            y: 90,
+            page2: []
+        }
+        let sound = {
+            x: 96,
+            y: 90,
+            page2: []
+        }
+        let feel = {
+            x: 158,
+            y: 90,
+            page2: []
+        }
+        const addNewPage = () => {
+            doc.addPage()
+            doc.addImage(logo, 'PNG', 95, 12, 20, 20)
+            doc.text('www.fourohseven.com', 86, 38)
+            doc.addImage(header, 'PNG', 5, 50, 200, 30)
+            doc.addImage(footer, 'PNG', 0, 268, 215, 30)
+            look.y = 90
+            sound.y = 90
+            feel.y = 90
+            return
+        }
+        const appendToPDF = (trait, column) => {
+            doc.text(trait, column.x, column.y)
+            return column.y += 8
+        }
+        const bufferToPage2 = (trait, column) => {
+            return column.page2.push(trait)
+        }
 
-        doc.save('branding_profile_by_407.pdf')
+        this.props.column.look.forEach(({ trait }) => {
+            if(look.y >= 258) {
+                return bufferToPage2(trait, look)
+            }
+            return appendToPDF(trait, look)
+        })
+        this.props.column.sound.forEach(({ trait }) => {
+            if(sound.y >= 258) {
+                return bufferToPage2(trait, sound)
+            }
+            return appendToPDF(trait, sound)
+        })
+        this.props.column.feel.forEach(({ trait }) => {
+            if(feel.y >= 258) {
+                return bufferToPage2(trait, feel)
+            }
+            return appendToPDF(trait, feel)
+        })
+
+        // check to see if a second page is needed
+        if(look.page2.length != 0 || sound.page2.length != 0 || feel.page2.length != 0) {
+            addNewPage()
+            if(look.page2) {
+                look.page2.forEach((trait) => {
+                    return appendToPDF(trait, look)
+                })
+            }
+            if(sound.page2) {
+                sound.page2.forEach((trait) => {
+                    return appendToPDF(trait, sound)
+                })
+            }
+            if(feel.page2) {
+                feel.page2.forEach((trait) => {
+                    return appendToPDF(trait, feel)
+                })
+            }
+        }
+        return doc.save('branding-profile-by-407.pdf')
     }
 
     generateUrl() {
