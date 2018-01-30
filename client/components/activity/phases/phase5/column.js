@@ -20,8 +20,10 @@ class Column extends React.Component {
         let traits = this.props.traits;
         return (
             <div className={'column ' + this.state.emptyClass}>
-                <h1>{this.props.name.toUpperCase()}</h1>
-                <h3>{this.props.description}</h3>
+                <div className='static-header'>
+                    <h1>{this.props.name.toUpperCase()}</h1>
+                    <h3>{this.props.description}</h3>
+                </div>
                 <div className='column-scroll'>
                     {traits.map((item, i) => {
                         return <div key={i} className='column-trait'>{item.trait}</div>

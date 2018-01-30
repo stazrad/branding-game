@@ -133,8 +133,8 @@ button:hover {
 }
 
 .trait-item {
-    display: inline-grid;
-    margin: 0px;
+    display: block;
+    margin: auto;
     background: white;
     line-height: 300px;
     text-align: center;

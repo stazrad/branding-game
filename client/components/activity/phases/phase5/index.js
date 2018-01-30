@@ -103,8 +103,8 @@ class Phase5 extends React.Component {
 
         // cycle through look, sound, & feel arrays
         for (let title in this.props.column) {
+            let columnPDF = eval(title)
             this.props.column[title].forEach(({ trait }) => {
-                let columnPDF = eval(title)
                 if(columnPDF.y >= 258) {
                     return bufferToPage2(trait, columnPDF)
                 }
